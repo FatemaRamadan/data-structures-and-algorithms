@@ -1,5 +1,7 @@
 'use strict';
 
+const { name } = require("mustache");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -9,8 +11,10 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-    let newArr = [1, 2, 3, 4, 5];
-    newArr.forEach((value, index) => newArr[index] = value + 1);
+    const newArr = [];
+    arr.forEach(element => {
+        newArr.push(element + 1);
+    });
     // Solution code here...
     return newArr;
 };
@@ -24,8 +28,10 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-    let newArr = ["hi", "how", "are", "you"];
-    newArr.forEach((value, index) => newArr[index] = value + "!");
+    let newArr = [];
+    arr.forEach(element => {
+        newArr.push(element + "!");
+    });
     return newArr;
 
     // Solution code here...
@@ -40,8 +46,8 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-    let newArray = ['hi', 'how', 'are', 'you'];
-    newArray.forEach((value, index) => newArray[index] = value.toUpperCase());
+    let newArray = [];
+    arr.forEach((value, index) => newArray[index] = value.toUpperCase());
     return newArray;
     // Solution code here...
 };
@@ -57,15 +63,15 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-    let newArray = ['hello', '301', 'students'];
-    newArray.forEach((value, index) => newArray[index] = value.toUpperCase() + '!');
+    let newArray = [];
+    word.forEach((value, index) => newArray[index] = value.toUpperCase() + '!');
     return newArray;
     // Solution code here...
 };
 
 const speaker = (words, callback) => {
-    let newArray = ['hello', '301', 'students'];
-    newArray.forEach((value, index) => newArray[index] = value.toUpperCase() + '!');
+    let newArray = [];
+    words.forEach((value, index) => newArray[index] = value.toUpperCase() + '!');
     return newArray;
     // Solution code here...
 };
@@ -87,15 +93,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-    let newArray = [0, 0, 0, 0, 0];
+    let newArray = [];
     newArray.forEach((value, index) => newArray[index].push(value));
     // Solution code here...
 };
 
 const addNumbers = (num, arr, times, callback) => {
-    let number = 8;
-    let array = [0, 0, 0, 0, 0];
-    let time = 5;
+    let number;
+    let array = [];
+    let time;
     array.forEach((value, index) => array[index].push(number));
 
     return array;
@@ -121,6 +127,16 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
+    const newArr = [];
+    availableItems.forEach((element, index) => {
+        newArr.push([
+            { name: 'apples', available: true },
+            { name: 'pears', available: true },
+            { name: 'oranges', available: false },
+            { name: 'bananas', available: true },
+            { name: 'blueberries', available: false }
+        ]);
+    });
     // Solution code here...
 };
 
@@ -139,6 +155,18 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
+    const output = [];
+    arr.forEach((element, index) => {
+        if (element % 3 === 0 && element % 5 === 0) {
+            output.push('Fizz Buzz');
+        } else if (element % 3 === 0) {
+            output.push('Fuzz');
+        } else if (element % 5 === 0) {
+            output.push('Buzz');
+        } else {
+            output.push(element);
+        }
+    });
     // Solution code here...
 };
 
