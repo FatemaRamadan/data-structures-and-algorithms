@@ -9,7 +9,7 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-    let newArr = [1, 2, 3, 4, 5];
+    let newArr = [];
     newArr.forEach((value, index) => newArr[index] = value + 1);
     // Solution code here...
     return newArr;
@@ -24,7 +24,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-    let newArr = ["hi", "how", "are", "you"];
+    let newArr = [];
     newArr.forEach((value, index) => newArr[index] = value + "!");
     return newArr;
 
@@ -40,7 +40,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-    let newArray = ['hi', 'how', 'are', 'you'];
+    let newArray = [];
     newArray.forEach((value, index) => newArray[index] = value.toUpperCase());
     return newArray;
     // Solution code here...
@@ -57,14 +57,14 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-    let newArray = ['hello', '301', 'students'];
+    let newArray = [];
     newArray.forEach((value, index) => newArray[index] = value.toUpperCase() + '!');
     return newArray;
     // Solution code here...
 };
 
 const speaker = (words, callback) => {
-    let newArray = ['hello', '301', 'students'];
+    let newArray = [];
     newArray.forEach((value, index) => newArray[index] = value.toUpperCase() + '!');
     return newArray;
     // Solution code here...
@@ -87,15 +87,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-    let newArray = [0, 0, 0, 0, 0];
+    let newArray = [];
     newArray.forEach((value, index) => newArray[index].push(value));
     // Solution code here...
 };
 
 const addNumbers = (num, arr, times, callback) => {
-    let number = 8;
-    let array = [0, 0, 0, 0, 0];
-    let time = 5;
+    let number;
+    let array = [];
+    let time;
     array.forEach((value, index) => array[index].push(number));
 
     return array;
