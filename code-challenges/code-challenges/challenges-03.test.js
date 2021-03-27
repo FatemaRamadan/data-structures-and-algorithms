@@ -23,10 +23,10 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
     const someArr = [];
-    const newArry = someArr.sort((a, b) => {
-        a.toUpperCase() < b.toUpperCase() ? -1 : 1;
+    arr.forEach(element => {
+        someArr.push(callback(element));
     });
-    return newArry;
+    return someArr;
     // Solution code here...
 };
 
@@ -39,11 +39,9 @@ For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
-    const newArr = [];
-    newArr.sort((a, b) => {
-
-        })
-        // Solution code here...
+    arr.sort();
+    return arr;
+    // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,6 +53,9 @@ HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
+
+    arr.sort((a, b) => a - b);
+    return arr;
     // Solution code here...
 };
 
@@ -68,6 +69,8 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => b - a);
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +85,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => a.toUpperCase - b.toUpperCase ? 1 : -1);
+    return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +105,8 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
     // Solution code here...
+    arr.sort((a, b) => b.price - a.price);
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------

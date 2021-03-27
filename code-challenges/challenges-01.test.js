@@ -93,18 +93,17 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-    let newArray = [];
-    newArray.forEach((value, index) => newArray[index].push(value));
+
+    arr.forEach((value, index) => arr[index].push(value));
     // Solution code here...
 };
 
 const addNumbers = (num, arr, times, callback) => {
-    let number;
-    let array = [];
-    let time;
-    array.forEach((value, index) => array[index].push(number));
+    arr.forEach((element, index) => {
+        arr.push(addValues(num, times));
+    });
 
-    return array;
+    return arr;
     // Solution code here...
 };
 
@@ -127,16 +126,19 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-    const newArr = [];
-    availableItems.forEach((element, index) => {
-        newArr.push([
-            { name: 'apples', available: true },
-            { name: 'pears', available: true },
-            { name: 'oranges', available: false },
-            { name: 'bananas', available: true },
-            { name: 'blueberries', available: false }
-        ]);
+    const newArr = [
+        { name: 'apples', available: true },
+        { name: 'pears', available: true },
+        { name: 'oranges', available: false },
+        { name: 'bananas', available: true },
+        { name: 'blueberries', available: false }
+    ];
+    newArr.forEach((element, index) => {
+        if (newArr.available === true) {
+            availableItems.push(element);
+        }
     });
+    return availableItems;
     // Solution code here...
 };
 
@@ -160,13 +162,14 @@ const fizzbuzz = (arr) => {
         if (element % 3 === 0 && element % 5 === 0) {
             output.push('Fizz Buzz');
         } else if (element % 3 === 0) {
-            output.push('Fuzz');
+            output.push('Fizz');
         } else if (element % 5 === 0) {
             output.push('Buzz');
         } else {
             output.push(element);
         }
     });
+    return output;
     // Solution code here...
 };
 
