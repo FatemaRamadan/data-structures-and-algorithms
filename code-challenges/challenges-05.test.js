@@ -37,8 +37,8 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
     // Solution code here...
-    arr.splice(idx, 3);
-    arr;
+    let newArr = arr.splice(idx, 3);
+    return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,8 +48,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-    arr = arr.join(' ');
-    return arr;
+    let newArr = arr.join(' ');
+    return newArr;
     // Solution code here...
 };
 
